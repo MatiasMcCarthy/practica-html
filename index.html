@@ -232,7 +232,7 @@ documentos html-->
 <input type="radio"  id="radio" name="radio2">
 <label for="radio2">Primera</label>
 
-
+<button type="submit">Enviar</button>
 </form>
 
 <h3>Select</h3>
@@ -243,8 +243,7 @@ documentos html-->
    
 </select>
 
-<input type="submit" value="Enviar">
-<input type="reset" value="Borrar">
+
 
 
 
@@ -262,7 +261,7 @@ documentos html-->
     })
 
     const colorPicker=document.getElementById("color")
-    const tycCheckbox=document.getElementById("labelTyc")
+    const labelTyc=document.getElementById("labelTyc")
     colorPicker.addEventListener("input",function(){
         const selectedColor=colorPicker.value;
         labelTyc.style.color= selectedColor;
