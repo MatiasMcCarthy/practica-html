@@ -12,7 +12,16 @@ el atributo lang define el tipo de lenguaje-->
     <!--Esta etiqueta se utiliza para agregar el favicon -->
 </head>
 
-<body><!-- Es el cuerpo del documento donde va a estar todo el contenido que queremos mostrar-->
+<body>
+    <nav>
+        <a href="#formatos">Formatos</a>
+        <a href="#tablas">Tablas</a>
+        <a href="#listas">Listas</a>
+        <a href="#iframes">Iframes</a>
+        <a href="#formulario">Formularios</a>
+    </nav>
+    
+    <!-- Es el cuerpo del documento donde va a estar todo el contenido que queremos mostrar-->
     <!-- Etiqueta de Heading sirve para crear títulos-->
     <h1 id="h1">Hola Mundo!</h1>
     <h1>Soy un titulo</h1>
@@ -37,7 +46,7 @@ el atributo lang define el tipo de lenguaje-->
 
         elit. In corporis rerum sapiente blanditiis velit labore?</p>
     <hr>
-    <h2>Clase II</h2>
+    <h2>Clase 5</h2>
     <a href="www.google.com">Ir a Google (no funciona)</a><br><!--Este vinculo no funciona-->
     <a href="https://www.google.com" target="_blank">Ir a Google</a><br><br><br><!--Este vinculo funciona-->
 
@@ -72,7 +81,7 @@ el atributo lang define el tipo de lenguaje-->
             width="200"></a>
 
     <br><br><br><br>
-    <h2>Listas</h2>
+    <h2 id="listas">Listas</h2>
     <h3>Listas desordenadas</h3>
     <ul><!--ul sirve para crear listas desordenadas-->
         <li>Listas</li>
@@ -104,7 +113,7 @@ el atributo lang define el tipo de lenguaje-->
         <dd>Consume combustible</dd>
     </dl>
 
-    <h2>Tablas</h2>
+    <h2 id="tablas">Tablas</h2>
 
     <table border="1" id="table">
         <tr>
@@ -134,7 +143,7 @@ el atributo lang define el tipo de lenguaje-->
         </tr>
     </table>
 
-<h2>Iframes</h2><!--Los iframes son elementos que permiten insertar documentos html dentro de otros
+<h2 id="iframes">Iframes</h2><!--Los iframes son elementos que permiten insertar documentos html dentro de otros
 documentos html-->
 
 <ul><!--la lista se vincula con el iframe a traves del target y el name-->
@@ -147,6 +156,118 @@ documentos html-->
 <br>
 
 <a href="#h1">Ir para arriba</a>
+<hr>
+<h2 id="formatos">Formatos de texto</h2>
+
+<p>b: <b>Estilo negrita</b></p>
+<p>strong: <strong>Estilo strong</strong></p>
+<p>cursiva: <i>Estilo cursiva</i></p>
+<p>Enfasis <em>Estilo enfasis</em></p>
+<p>Subrayado: <u>Estilo subrayado</u></p>
+<p>Small <small>Estilo smal</small></p>
+<p>gig <big>Estilo big</big></p>
+<p>Superindice <sup>Estilo superindice</sup></p>
+<p>Subindice <sub>Estilo subindice</sub></p>
+<p>Tachado</p>
+
+
+<a href="">Descagar archivo</a>
+<br><br><br>
+
+<h2 id="formulario">Formulario</h2>
+
+
+<form action="mailto:test@mail.com?subject=Desde%20Formulario" method="post" enctype="text/plain">Formulario
+ <h3>Texto</h3>
+ <label for="nombre">Nombre:</label>
+ <input type="text" id="nombre" required placeholder="Ingrese su nombre">
+  <br>
+ <label for="apellido">Apellido:</label>
+ <input type="text" id="apellido" required>
+ <br>
+ <label for="pass">Password</label>
+ <input type="password" id="pass">
+<br>
+<label for="email">Mail</label>
+<input type="email" id="email">
+<br><br>
+<label for="tell">Telefono con formato (123) 456-7890</label>
+(<input type="tel" id="tell" pattern="[0-9]{3}" placeholder="###" maxlength="3">>)-
+(<input type="tel" name="tel2" id="tell" pattern="[0-9]{4}" placeholder="####">)
+
+<h3>Numericos</h3><br>
+<label for="numero:">Precio: </label>
+<input type="number" id="numero" min="0"  step="0.1" max="5">
+<br>
+
+<label for="slider">Nivel</label>
+<input type="range" id="slider" min="1" max="10" value="5">
+<output for="slider" class="slider-output"></output>
+<br>
+<h3>Fecha y Hora</h3>
+<label for="fechaHora">Fecha y Hora</label>
+<input type="datetime-local" id="fechaHora">
+<br>
+<label for="mes">Mes</label>
+<input type="month" id="mes"><br><br>
+<label for="semana">Semana</label>
+<input type="week" id="semana"><br><br>
+<label for="dia">Dia</label>
+<input type="date" id="dia" step="2"><br><br>
+<h3>Check Box</h3>
+
+<input type="checkbox" id="tyc">
+<label for="tyc" id="labelTyc">Aceptar terminos y condiciones</label><br>
+<input type="checkbox" id="noti">
+<label for="noti">Recibir notificaciones</label>
+
+
+<h4>Color</h4>
+<label for="color">Elija Color</label>
+<input type="color" id="color">
+
+<h3>Radio</h3>
+<input type="radio"  id="radio" name="radio1">
+<label for="radio1">Turista</label>
+<input type="radio"  id="radio" name="radio2">
+<label for="radio2">Primera</label>
+
+
+</form>
+
+<h3>Select</h3>
+<select name="selector" id="selector">
+    <option value="0" disabled selected>Elija una opcion</option>
+    <option value="1">Turista</option>
+    <option value="2">Primera</option>
+   
+</select>
+
+<input type="submit" value="Enviar">
+<input type="reset" value="Borrar">
+
+
+
 </body>
 
 </html>
+
+<script>
+    const nivel=document.querySelector("#slider");
+    const output=document.querySelector(".slider-output");
+    output.textContent =nivel.value;
+    nivel.addEventListener("input",function(){//esta atento a los cambios
+    output.textContent=slider.value;
+
+    })
+
+    const colorPicker=document.getElementById("color")
+    const tycCheckbox=document.getElementById("labelTyc")
+    colorPicker.addEventListener("input",function(){
+        const selectedColor=colorPicker.value;
+        labelTyc.style.color= selectedColor;
+
+
+    })
+
+</script>
